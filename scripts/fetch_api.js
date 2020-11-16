@@ -3,7 +3,7 @@
 // how best to otuput the JSON? in a .txt?
 
 // const fetch = require('node-fetch'); // FOR TESTING ONLY! REMOVE THIS FOR PRODUCTION CODE!
-const output = document.querySelector('#countries');
+const output = document.querySelector('#cities');
 const displayData = document.querySelector('#results');
 let apiData;
 
@@ -22,24 +22,32 @@ async function fetchData(url) {
 
 function handleSelect(evt) {
   console.log(evt.target.value);
-  console.log(apiData);
   const myChoice = apiData.find((obj) => evt.target.value === obj.name);
   console.log(myChoice);
   // Change innerHTML of comparison div in this function
 }
 
-fetchData('https://api.openaq.org/v1/cities?limit=200').then((res) => {
-  apiData = res.results;
-  let countryCode = '';
-  res.results.forEach((countryObject) => {
-    console.log(countryObject);
-    countryCode = countryCode.concat(
-      ' ',
-      `<option value="${countryObject.name}">${countryObject.name}</option>`
-    );
-  });
-  output.innerHTML = countryCode;
-});
+// Regex to exclude numbers and ALL CAPS (counties)
+function hasLowercase(myString) {
+  return /[a-z]/.test(myString);
+}
+
+fetchData('https://api.openaq.org/v1/cities?country=US&limit=1000').then(
+  (res) => {
+    apiData = res.results;
+    let cityCode = '';
+    res.results.forEach((cityObject) => {
+      // Excluding results with numbers or ALL CAPS (counties)
+      if (hasLowercase(cityObject.name)) {
+        cityCode = cityCode.concat(
+          ' ',
+          `<option value="${cityObject.name}">${cityObject.name}</option>`
+        );
+      }
+    });
+    output.innerHTML = cityCode;
+  }
+);
 // do all DOM manipulation inside this .then statement
 
 // ------------------------------------------
