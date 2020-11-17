@@ -8,9 +8,61 @@
   </head>
 
   <body>
-    <label for="cities">Choose a City</label>
-    <select id="cities"></select>
-    <div id="results"></div>
+    <header>
+      <label for="cities">Please Choose a City</label>
+      <select id="cities"></select>
+    </header>
+    <div id="results">
+      <h2>Pollutant Measurements for</h2>
+      <h2 id="selected-city"></h2>
+      <p class="legend">
+        (Micrograms per cubic meter &mdash; μg/m<sup>3</sup>)
+      </p>
+      <label class="pollutant"
+        >Particulate Matter<sub>2.5</sub>:
+      </label>
+      <p></p>
+      <label class="pollutant"
+        >Particulate Matter<sub>10</sub>:
+      </label>
+      <p></p>
+      <label class="pollutant">Sulfur Dioxide: </label>
+      <p></p>
+      <label class="pollutant">Nitrogen Dioxide: </label>
+      <p></p>
+      <label class="pollutant">Ozone: </label>
+      <p></p>
+      <label class="pollutant">Carbon Monoxide: </label>
+      <p></p>
+      <label class="pollutant">Black Carbon: </label>
+      <p></p>
+    </div>
+
+    <div id="lou-comparison">
+      <h2>Pollutant Measurements for</h2>
+      <h2>Louisville, Ky</h2>
+      <p class="legend">
+        (Micrograms per cubic meter &mdash; μg/m<sup>3</sup>)
+      </p>
+      <label class="pollutant"
+        >Particulate Matter<sub>2.5</sub>:
+      </label>
+      <p></p>
+      <label class="pollutant"
+        >Particulate Matter<sub>10</sub>:
+      </label>
+      <p></p>
+      <label class="pollutant">Sulfur Dioxide: </label>
+      <p></p>
+      <label class="pollutant">Nitrogen Dioxide: </label>
+      <p></p>
+      <label class="pollutant">Ozone: </label>
+      <p></p>
+      <label class="pollutant">Carbon Monoxide: </label>
+      <p></p>
+      <label class="pollutant">Black Carbon: </label>
+      <p></p>
+    </div>
 
     <script src="scripts/fetch_api.js"></script>
   </body>
