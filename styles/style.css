@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu|Dosis&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
@@ -7,6 +6,7 @@ BODY LAYOUT
 --------------*/
 header {
   display: block;
+  margin-bottom: 2em;
 }
 
 #results,
@@ -14,7 +14,12 @@ header {
   display: inline-block;
   border: 5px solid lightseagreen;
   padding: 1em;
-  border-radius: 5%;
+  margin: 0 1em 2em 0;
+  border-radius: 10px;
+}
+
+h2 {
+  margin: .25em 0 .5em;
 }
 
 /* -------------
@@ -28,6 +33,12 @@ body {
   font-style: italic;
 }
 
-.pollutant {
+.label {
   font-weight: bold;
+  display: inline;
+}
+
+.output {
+  font-weight: bold;
+  color: slateblue;
 }
