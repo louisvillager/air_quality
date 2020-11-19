@@ -1,4 +1,3 @@
-// const fetch = require('node-fetch'); // FOR TESTING ONLY! REMOVE THIS FOR PRODUCTION CODE!
 // ------------------------------------------
 //  VARIABLES
 // ------------------------------------------
@@ -27,10 +26,6 @@ let apiData;
 
 async function fetchData(url) {
   const data = await fetch(url);
-  // .then(checkStatus)
-  // .then((res) => res.json())
-  // .then((data) => console.log(data))
-  // .catch((error) => console.log('Looks like there was a problem.', error));
   return await data.json();
 }
 
@@ -84,7 +79,7 @@ function hasLowercase(myString) {
 }
 
 function meanAvg(values) {
-  let sum = values.reduce((a, b) => a + b.count, 0);
+  const sum = values.reduce((a, b) => a + b.count, 0);
   return Math.round(sum / values.length);
 }
 
