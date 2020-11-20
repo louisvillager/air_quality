@@ -9,6 +9,10 @@ header {
   margin-bottom: 2em;
 }
 
+label {
+  margin-right: 1em;
+}
+
 #results,
 #lou-comparison {
   display: inline-block;
